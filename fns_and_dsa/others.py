@@ -1,38 +1,42 @@
-shopping_list = []
-item = " "
-m = 0
-lef = len(shopping_list)
-
-def menu_display():
+def display_menu():
     print("Shopping List Manager")
     print("1. Add Item")
     print("2. Remove Item")
     print("3. View List")
     print("4. Exit")
 
-def add(item):
-    shopping_list.append(item)
+def main():
+    shopping_list = []
+    def add(item):
+      shopping_list.append(item)
 
-def display():
-    print(shopping_list)
+    def display():
+      print(shopping_list)
 
-def delete(item):
-   shopping_list.remove(item)
+    def delete(item):
+      shopping_list.remove(item)
+    
+    shopping_list = []
+    while True:
+        display_menu()
+        choice = input("Enter your choice: ")
 
-while m < 10:
-     menu_display()
-     menu = input("Enter your choice: ")
-     match menu:
-        case "1":
-           item = input("item? ")
-           add(item)
-        case "3":
-          display()
-        case "2":
-             item = input("item? ")
-             delete(item)
-        case "4":
-          print("Goodbye!")
-          break
-        case _:
-             print(f"Invalid choice. Please try again.")
+        if choice == '1':
+          item = input("item? ")
+          add(item)
+          pass
+        elif choice == '2':
+            item = input("item? ")
+            delete(item)
+    
+        elif choice == '3':
+             display()
+             pass
+        elif choice == '4':
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
