@@ -22,11 +22,11 @@ def main():
         choice = input("Enter your choice: ")
 
         if choice == '1':
-          item = input("item? ")
+          item = input("Enter the item to add: ")
           add(item)
           pass
         elif choice == '2':
-            item = input("item? ")
+            item = input("Enter the item to add: ")
             delete(item)
     
         elif choice == '3':
